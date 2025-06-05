@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta Metodológica: Sistema de Ecuaciones 2x2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .step {
+      background-color: #e8f0fe;
+      border-left: 5px solid #4285f4;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    code {
+      background: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .exercise {
+      background-color: #dff0d8;
+      border-left: 5px solid #4caf50;
+      padding: 15px;
+      margin: 30px 0;
+      border-radius: 8px;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Propuesta Metodológica: Enseñanza de Sistemas de Ecuaciones 2x2</h1>
+    <p>Esta página propone una metodología sencilla y visual para enseñar sistemas de ecuaciones lineales 2x2 a estudiantes de primero de bachillerato.</p>
+
+    <h2>¿Qué es un sistema de ecuaciones 2x2?</h2>
+    <p>Es un conjunto de dos ecuaciones lineales con dos incógnitas. Por ejemplo:</p>
+    <p><code>x + y = 5</code><br><code>2x - y = 4</code></p>
+
+    <h2>Propuesta metodológica en 3 pasos:</h2>
+
+    <div class="step">
+      <h3>Paso 1: Representación gráfica</h3>
+      <p>Se enseña a los estudiantes a graficar ambas ecuaciones en el plano cartesiano. El punto donde se cruzan (intersección) es la solución.</p>
+      <p><strong>Ventaja:</strong> Visualización del concepto de solución como intersección.</p>
+    </div>
+
+    <div class="step">
+      <h3>Paso 2: Método de sustitución</h3>
+      <p>Despejamos una variable en una ecuación y la sustituimos en la otra.</p>
+      <p>Ejemplo:<br>
+      De <code>x + y = 5</code>, despejamos <code>y = 5 - x</code>.<br>
+      Sustituimos en <code>2x - y = 4</code>:<br>
+      <code>2x - (5 - x) = 4</code> → <code>3x = 9</code> → <code>x = 3</code>, luego <code>y = 2</code>.</p>
+    </div>
+
+    <div class="step">
+      <h3>Paso 3: Método de igualación o eliminación</h3>
+      <p>Se puede usar igualación (igualar las dos expresiones de una misma variable) o eliminación (sumar/restar ecuaciones para eliminar una variable).</p>
+      <p>Ideal para reforzar habilidades algebraicas.</p>
+    </div>
+
+    <div class="exercise">
+      <h2>🧠 Ejercicio interactivo</h2>
+      <p>Resuelve el siguiente sistema de ecuaciones:</p>
+      <p><code>x + 2y = 7</code><br><code>3x - y = 2</code></p>
+      <label for="x">x = </label>
+      <input type="number" id="x">
+      <label for="y">y = </label>
+      <input type="number" id="y">
+      <button onclick="checkAnswer()">Comprobar</button>
+      <p id="feedback"></p>
+    </div>
+
+    <h2>Conclusión</h2>
+    <p>Al integrar representación gráfica y métodos algebraicos, se facilita la comprensión conceptual y procedimental del sistema 2x2. Esta propuesta busca combinar teoría, práctica y visualización para mejorar el aprendizaje.</p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const x = parseFloat(document.getElementById('x').value);
+      const y = parseFloat(document.getElementById('y').value);
+      const isCorrect = (x === 2 && y === 2.5);
+      const feedback = document.getElementById('feedback');
+      if (isNaN(x) || isNaN(y)) {
+        feedback.textContent = 'Por favor, introduce ambos valores.';
+        feedback.style.color = 'orange';
+      } else if (isCorrect) {
+        feedback.textContent = '✅ ¡Correcto! La solución es (x=2, y=2.5)';
+        feedback.style.color = 'green';
+      } else {
+        feedback.textContent = '❌ Incorrecto. Intenta de nuevo.';
+        feedback.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>
